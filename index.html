@@ -1,0 +1,715 @@
+<!DOCTYPE html> 
+<html> 
+<head> 
+  <title>My Page</title> 
+  <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="jquery.mobile-1.2.0.css" />
+  <script src="jquery-1.8.2.min.js"></script>
+  <script src="jquery.mobile-1.2.0.min.js"></script>
+  <script src="miscript.js"></script>
+  <script src="tweetscript.js"></script>
+  <link href="jquery.tweet.css" media="all" rel="stylesheet" type="text/css"/>
+  <style>
+  body, #playerlist {
+    font-family: verdana;
+  }
+  </style>
+      <script src="local:///chrome/webworks.js" type="text/javascript"></script>
+    <script>
+      function ready() {
+         var ele = document.createElement("div");
+         ele.innerHTML = "uuid: " + blackberry.identity.uuid;
+         document.documentElement.appendChild(ele);
+      }   
+      window.addEventListener("load", function(e) {
+         document.addEventListener("webworksready", ready);
+      }, false);
+   </script>
+</head> 
+<body> 
+
+<div data-role="page" id="home">
+
+  <div data-role="header" data-position="fixed">
+    <h1>Mumbai Indians 2013 season</h1>
+  </div><!-- /header -->
+
+     <div data-role="content">   
+
+    <center><img src="logo.png"/></center>
+<p><a href="#squad" data-role="button">Squad</a></p> 
+<p><a href="#standing" data-role="button">Standings</a></p> 
+<p><a href="#tweets"  data-role="button" onclick="loadtweets()">Latest Tweets</a></p> 
+<p><a href="#schedule"  data-role="button">IPL 2013 Schedule</a></p> 
+    <div class="ui-body">
+    </div><!-- /themed container -->
+
+  </div><!-- /content -->
+
+  <div data-role="footer" data-position="fixed">
+
+      <h1>Mumbai Indians</h1>
+    
+  </div>
+
+</div><!-- /page -->
+
+
+<div data-role="page" id="squad">
+
+  <div data-role="header" data-position="fixed">
+    <a href="#home" data-role="button">Back</a>
+    <h1>Mumbai Indians 2013 season</h1>
+  </div><!-- /header -->
+
+     <div data-role="content">   
+<ul data-role="listview" id="playerlist">
+  <li>
+    <a href="#">
+    <img src="97.png"/>
+    <p><b>Sachin Tendulkar (Captain)</b>
+  </br>
+  Role: <b>Batsman</b>
+</br>
+Bats: <b>Right-handed</b>
+</br>
+Bowls: <b>  Right-arm off/leg-spin</b>
+</br>
+Nationality: <b>Indian</b></p>
+</a>
+</li>
+  <li>
+    <a href="#">
+    <img src="98.png"/>
+    <p><b>Abu Nechim</b>
+  </br>
+  Role: <b>Bowler</b>
+</br>
+Bats: <b>Right-handed</b>
+</br>
+Bowls: <b>Right-arm medium fast</b>
+</br>
+Nationality: <b>Indian</b></p>
+</a>
+</li>
+  <li>
+    <a href="#">
+    <img src="99.png"/>
+    <p><b>Aditya Tare</b>
+  </br>
+  Role: <b>Wicketkeeper Batsman</b>
+</br>
+Bats: <b>Right-handed</b>
+</br>
+Nationality: <b>Indian</b></p>
+</a>
+</li>
+  <li>
+    <a href="#">
+    <img src="100.png"/>
+    <p><b>Ambati Rayadu</b>
+  </br>
+  Role: <b>Wicketkeeper batsman</b>
+</br>
+Bats: <b>Right-handed</b>
+</br>
+Bowls: <b>Right-arm off-spin</b>
+</br>
+Nationality: <b>Indian</b></p>
+</a>
+</li>
+  <li>
+    <a href="#">
+    <img src="260.png"/>
+    <p><b>Amitoze Singh</b>
+  </br>
+  Role: <b>Batting Allrounder</b>
+</br>
+Bats: <b>Right-handed</b>
+</br>
+Bowls: <b>Right-arm medium</b>
+</br>
+Nationality: <b>Indian</b></p>
+</a>
+</li>
+  <li>
+    <a href="#">
+    <img src="361.png"/>
+    <p><b>Jalaj Saxena</b>
+  </br>
+  Role: <b>Batsman</b>
+</br>
+Bats: <b>Right-handed</b>
+</br>
+Bowls: <b>Right-arm off break</b>
+</br>
+Nationality: <b>Indian</b></p>
+</a>
+</li>
+  <li>
+    <a href="#">
+    <img src="101.png"/>
+    <p><b>Dhawal Kulkarni</b>
+  </br>
+  Role: <b>Bowler</b>
+</br>
+Bats: <b>Right-handed</b>
+</br>
+Bowls: <b>Right-arm medium fast</b>
+</br>
+Nationality: <b>Indian</b></p>
+</a>
+</li>
+  <li>
+    <a href="#">
+    <img src="102.png"/>
+    <p><b>Dinesh Karthik</b>
+  </br>
+  Role: <b>Wicketkeeper Batsman</b>
+</br>
+Bats: <b>Right-handed</b>
+</br>
+Nationality: <b>Indian</b></p>
+</a>
+</li>
+  <li>
+    <a href="#">
+    <img src="361.png"/>
+    <p><b>Rishi Dhawan</b>
+  </br>
+  Role: <b>All-rounder</b>
+</br>
+Bats: <b>Right-handed</b>
+</br>
+Bowls: <b>Right-arm medium fast</b>
+</br>
+Nationality: <b>Indian</b></p>
+</a>
+</li>
+  <li>
+    <a href="#">
+    <img src="361.png"/>
+    <p><b>Ricky Ponting</b>
+  </br>
+  Role: <b>Batsman</b>
+</br>
+Bats: <b>Right-handed</b>
+</br>
+Bowls: <b>Right-arm medium</b>
+</br>
+Nationality: <b>Australian</b></p>
+</a>
+</li>
+  <li>
+    <a href="#">
+    <img src="104.png"/>
+    <p><b>Munaf Patel</b>
+  </br>
+  Role: <b>Bowler</b>
+</br>
+Bats: <b>Right-handed</b>
+</br>
+Bowls: <b>Right-arm medium</b>
+</br>
+Nationality: <b>Indian</b></p>
+</a>
+</li>
+  <li>
+    <a href="#">
+    <img src="103.png"/>
+    <p><b>Harbhajan Singh</b>
+  </br>
+  Role: <b>Bowling Allrounder</b>
+</br>
+Bats: <b>Right-handed</b>
+</br>
+Bowls: <b>Right-arm off-spin</b>
+</br>
+Nationality: <b>Indian</b></p>
+</a>
+</li>
+  <li>
+    <a href="#">
+    <img src="103.png"/>
+    <p><b>Sushant Marathe</b>
+  </br>
+  Role: <b>Wicketkeeper Batsman</b>
+</br>
+Bats: <b>Left-handed</b>
+</br>
+Bowls: <b>Right-arm leg-spin</b>
+</br>
+Nationality: <b>Indian</b></p>
+</a>
+</li>
+  <li>
+    <a href="#">
+    <img src="105.png"/>
+    <p><b>Pawan Suyal</b>
+  </br>
+  Role: <b>Bowler</b>
+</br>
+Bats: <b>Right-handed</b>
+</br>
+Bowls: <b>Left-arm medium</b>
+</br>
+Nationality: <b>Indian</b></p>
+</a>
+</li>
+  <li>
+    <a href="#">
+    <img src="106.png"/>
+    <p><b>Pragyan Ojha</b>
+  </br>
+  Role: <b>Bowler</b>
+</br>
+Bats: <b>Left-handed</b>
+</br>
+Bowls: <b>Left-arm orthodox-spin</b>
+</br>
+Nationality: <b>Indian</b></p>
+</a>
+</li>
+  <li>
+    <a href="#">
+    <img src="361.png"/>
+    <p><b>Phil Hughes</b>
+  </br>
+  Role: <b>Batsman</b>
+</br>
+Bats: <b>Left-handed</b>
+</br>
+Nationality: <b>Australian</b></p>
+</a>
+</li>
+  <li>
+    <a href="#">
+    <img src="107.png"/>
+    <p><b>Rohit Sharma</b>
+  </br>
+  Role: <b>Batsman</b>
+</br>
+Bats: <b>Right-handed</b>
+</br>
+Bowls: <b>Right-arm off-spin</b>
+</br>
+Nationality: <b>Indian</b></p>
+</a>
+</li>
+  <li>
+    <a href="#">
+    <img src="361.png"/>
+    <p><b>Glenn Maxwell</b>
+  </br>
+  Role: <b>Allrounder</b>
+</br>
+Bats: <b>Right-handed</b>
+</br>
+Bowls: <b>Right-arm off-spin</b>
+</br>
+Nationality: <b>Australian</b></p>
+</a>
+</li>
+  <li>
+    <a href="#">
+    <img src="108.png"/>
+    <p><b>Suryakumar Yadav</b>
+  </br>
+  Role: <b>Batsman</b>
+</br>
+Bats: <b>Right-handed</b>
+</br>
+Bowls: <b>Right-arm medium</b>
+</br>
+Nationality: <b>Indian</b></p>
+</a>
+</li>
+  <li>
+    <a href="#">
+    <img src="361.png"/>
+    <p><b>Jacob Oram</b>
+  </br>
+  Role: <b>All-rounder</b>
+</br>
+Bats: <b>Left-handed</b>
+</br>
+Bowls: <b>Right-arm medium fast</b>
+</br>
+Nationality: <b>New Zealander</b></p>
+</a>
+</li>
+  <li>
+    <a href="#">
+    <img src="361.png"/>
+    <p><b>Nathan Coulter-Nile</b>
+  </br>
+  Role: <b>Bowler</b>
+</br>
+Bats: <b>Right-handed</b>
+</br>
+Bowls: <b>Right-arm fast</b>
+</br>
+Nationality: <b>Australian</b></p>
+</a>
+</li>
+  <li>
+    <a href="#">
+    <img src="111.png"/>
+    <p><b>Yuzvendra Chahal</b>
+  </br>
+  Role: <b>Bowler</b>
+</br>
+Bats: <b>Right-handed</b>
+</br>
+Bowls: <b>Right-arm leg spin</b>
+</br>
+Nationality: <b>Indian</b></p>
+</a>
+</li>
+  <li>
+    <a href="#">
+    <img src="205.png"/>
+    <p><b>Aiden Blizzard</b>
+  </br>
+  Role: <b>Batsman</b>
+</br>
+Bats: <b>Left-handed</b>
+</br>
+Bowls: <b>Left-arm medium</b>
+</br>
+Nationality: <b>Australian</b></p>
+</a>
+</li>
+
+
+  <li>
+    <a href="#">
+    <img src="413.png"/>
+    <p><b>Dwayne Smith</b>
+  </br>
+  Role: <b>Batting All-rounder</b>
+</br>
+Bats: <b>Right-handed</b>
+</br>
+Bowls: <b>Right-arm medium</b>
+</br>
+Nationality: <b>West Indian</b></p>
+</a>
+</li>
+  <li>
+    <a href="#">
+    <img src="209.png"/>
+    <p><b>James Franklin</b>
+  </br>
+  Role: <b>All-rounder</b>
+</br>
+Bats: <b>Left-handed</b>
+</br>
+Bowls: <b>Left-arm medium fast</b>
+</br>
+Nationality: <b>New Zealander</b></p>
+</a>
+</li>
+  <li>
+    <a href="#">
+    <img src="210.png"/>
+    <p><b>Kieron Pollard</b>
+  </br>
+  Role: <b>All-Rounder</b>
+</br>
+Bats: <b>Right-handed</b>
+</br>
+Bowls: <b>Right-arm medium</b>
+</br>
+Nationality: <b>West Indian</b></p>
+</a>
+</li>
+  <li>
+    <a href="#">
+    <img src="211.png"/>
+    <p><b>Lasith Malinga</b>
+  </br>
+  Role: <b>Bowler</b>
+</br>
+Bats: <b>Right-handed</b>
+</br>
+Bowls: <b>Right-arm fast</b>
+</br>
+Nationality: <b>Sri Lankan</b></p>
+</a>
+</li>
+  <li>
+    <a href="#">
+    <img src="213.png"/>
+    <p><b>Mitchell Johnson</b>
+  </br>
+  Role: <b>Bowling all-rounder</b>
+</br>
+Bats: <b>Left-handed</b>
+</br>
+Bowls: <b>Left-arm fast</b>
+</br>
+Nationality: <b>Australian</b></p>
+</a>
+</li>
+</ul>
+
+
+
+
+
+  </div><!-- /content -->
+
+  <div data-role="footer" data-position="fixed">
+
+      <h1>Mumbai Indians </h1>
+    
+  </div>
+
+</div><!-- /page -->
+
+<div data-role="page" id="standing">
+
+  <div data-role="header" data-position="fixed">
+    <a href="#home" data-role="button">Back</a>
+    <h1>Mumbai Indians</h1>
+  </div><!-- /header -->
+
+     <div data-role="content">   
+<ul data-role="listview">
+  <li data-role="list-divider">2012</li>
+  
+  <li>
+    Games: <b>17</b>
+  </br>
+    Wins: <b>10</b>
+  </br>
+  Losses: <b>7</b>
+  </br>
+  League Position: <b>4</b>
+</li>
+  <li data-role="list-divider">2011</li>
+    <li>
+    Games: <b>16</b>
+  </br>
+    Wins: <b>10</b>
+  </br>
+  Losses: <b>6</b>
+  </br>
+  League Position: <b>3</b>
+</li>
+  <li data-role="list-divider">2010</li>
+    <li>
+    Games: <b>16</b>
+  </br>
+    Wins: <b>11</b>
+  </br>
+  Losses: <b>5</b>
+  </br>
+  League Position: <b>4</b>
+</li>
+  <li data-role="list-divider">2009</li>
+    <li>
+    Games: <b>14</b>
+  </br>
+    Wins: <b>5</b>
+  </br>
+  Losses: <b>8</b>
+  </br>
+  League Position: <b>7</b>
+</li>
+  <li data-role="list-divider">2008</li>
+    <li>
+    Games: <b>14</b>
+  </br>
+    Wins: <b>7</b>
+  </br>
+  Losses: <b>7</b>
+  </br>
+  League Position: <b>6</b>
+</li>
+</ul>
+
+  </div><!-- /content -->
+
+  <div data-role="footer" data-position="fixed">
+
+      <h1>Mumbai Indians </h1>
+    
+  </div>
+
+</div><!-- /page -->
+<div data-role="page" id="tweets">
+
+  <div data-role="header" data-position="fixed">
+    <a href="#home" data-role="button">Back</a>
+    <h1>Mumbai Indians</h1>
+  </div><!-- /header -->
+
+     <div data-role="content">   
+
+<ul id="mitweets" data-role="listview">
+</ul>
+  
+
+  </div><!-- /content -->
+
+  <div data-role="footer" data-position="fixed">
+
+      <h1>Mumbai Indians </h1>
+    
+  </div>
+
+</div><!-- /page -->
+<div data-role="page" id="schedule">
+
+  <div data-role="header" data-position="fixed">
+    <a href="#home" data-role="button">Back</a>
+    <h1>Mumbai Indians</h1>
+  </div><!-- /header -->
+
+     <div data-role="content">   
+<ul data-role="listview">
+  <li>
+    <p>
+<b>Royal Challengers Bangalore v/s Mumbai Indians</b>
+</br>
+20:00 GMT+0530 (8:00: IST)
+</br>Thursday April 4th 2013
+</br>M. Chinnaswamy Stadium, Bengaluru
+</p>
+</li>
+<li>
+  <p>
+  <b>Mumbai Indians v/s Chennai Superkings</b>
+</br>
+20:00 GMT+0530 (8:00: IST)
+</br>
+Saturday April 6th 2013
+</br>
+M. A. Chidambaram Stadium, Chennai
+</p>
+</li>
+<li>
+  <p>
+  <b>Mumbai Indians v/s Delhi Daredevils</b>
+</br>
+20:00 GMT+0530 (8:00: IST)
+</br>
+Tuesday April 9th 2013
+</br>
+Wankhede Stadium, Mumbai
+</p>
+</li>
+<li>
+  <p>
+  <b>Mumbai Indians v/s Pune Warriors India</b>
+</br>
+16:00 GMT+0530 (4:00: IST)
+</br>
+Saturday April 13th 2013
+</br>
+Wankhede Stadium, Mumbai
+</p></li>
+<li>
+  <p>
+    <b>Rajasthan Royals v/s Mumbai Indians</b>
+</br>
+20:00 GMT+0530 (8:00: IST)
+</br>
+Wednesday April 17th 2013
+</br>Sawai Mansingh Stadium, Jaipur
+</p>
+</p></li>
+<li>
+  <p>
+    <b>Delhi Daredevils v/s Mumbai Indians</b>
+</br>16:00 GMT+0530 (4:00: IST)
+</br>Sunday April 21st 2013
+</br>Feroz Shah Kotla, Delhi
+</p></li>
+  <li>
+    <p>
+      <b>Kolkata Knight RIders v/s Mumbai Indians</b>
+</br>20:00 GMT+0530 (8:00: IST)
+</br>Wednesday April 24th 2013
+</br>Eden Gardens, Kolkata
+</p></li>
+  <li>
+    <p>
+      <b>Mumbai Indians v/s Royal Challengers Bangalore</b>
+</br>20:00 GMT+0530 (8:00: IST)
+</br>Saturday April 27th 2013
+</br>Wankhede Stadium, Mumbai
+</li>
+<li>
+  <p>
+    <b>Mumbai Indians v/s Kings XI Punjab</b>
+</br>20:00 GMT+0530 (8:00: IST)
+</br>Monday April 29th 2013
+</br>Wankhede Stadium, Mumbai
+</p></li>
+<li>
+  <p>
+    <b>Sunrisers v/s Mumbai Indians</b>
+</br>16:00 GMT+0530 (4:00: IST)
+</br>Wednesday May 1st 2013
+</br>Rajiv Gandhi Cricket Stadium, Hyderabad
+</p></li>
+<li>
+  <p>
+    <b>Mumbai Indians v/s Chennai Superkings</b>
+</br>16:00 GMT+0530 (4:00: IST)
+</br>Sunday May 5th 2013
+</br>Wankhede Stadium, Mumbai
+</p></li>
+<li>
+  <p>
+    <b>Mumbai Indians v/s Kolkata Knight Riders</b>
+</br>20:00 GMT+0530 (8:00: IST)
+</br>Tuesday May 7th 2013
+</br>Wankhede Stadium, Mumbai
+</p></li>
+<li>
+  <p>
+    <b>Sahara Pune Warriors v/s Mumbai Indians</b>
+</br>16:00 GMT+0530 (4:00: IST)
+</br>Saturday May 11th 2013
+</br>Subrata Roy Sahara Stadium, Pune
+</p></li>
+<li>
+  <p>
+    <b>Mumbai Indians v/s Sun Risers</b>
+</br>20:00 GMT+0530 (8:00: IST)
+</br>Monday May 13th 2013
+</br>Wankhede Stadium, Mumbai
+</p></li>
+<li>
+  <p>
+    <b>Mumbai Indians v/s Rajasthan Royals</b>
+</br>20:00 GMT+0530 (8:00: IST)
+</br>Wednesday May 15th 2013
+</br>Wankhede Stadium, Mumbai
+</p>
+</li>
+<li>
+  <p>
+    <b>Kings XI Punjab v/s Mumbai Indians</b>
+</br>16:00 GMT+0530 (4:00: IST)
+</br>Saturday May 18th 2013
+</br>HPCA Stadium, Dharamsala
+</p>
+</li>
+</ul>
+  </div><!-- /content -->
+
+  <div data-role="footer" data-position="fixed">
+
+      <h1>Mumbai Indians </h1>
+    
+  </div>
+
+</div><!-- /page -->
+</body>
+</html>
